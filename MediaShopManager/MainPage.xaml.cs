@@ -23,9 +23,39 @@ namespace MediaShopManager
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        private void NavigateToWarehouseView()
+        {
+            if (Frame != null)
+            {
+                Frame.Navigate(typeof(WarehouseManagerPage));
+            }
+
+        }
+
+        private void NavigateToCashierView()
+        {
+            if (Frame != null)
+            {
+                Frame.Navigate(typeof(CashierRegisterPage));
+            }
+        }
+
+            private void ViewButtonCashierManager(object sender, RoutedEventArgs e)
+        {
+            NavigateToCashierView();
+        }
+
+        private void ViewButtonWarehouseManager(object sender, RoutedEventArgs e)
+        {
+            NavigateToWarehouseView();
+        }
+
         public MainPage()
         {
             this.InitializeComponent();
+
+
 
             WarehouseManager warehouse = new WarehouseManager();
             CashRegisterManager cashRegister = new CashRegisterManager();
