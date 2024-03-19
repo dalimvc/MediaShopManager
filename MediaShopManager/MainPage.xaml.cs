@@ -28,15 +28,38 @@ namespace MediaShopManager
             this.InitializeComponent();
 
             WarehouseManager warehouse = new WarehouseManager();
-            warehouse.AddBook("The Hobbit", 20, "J.R.R. Tolkien", "Fantasy", "Paperback", "English");
+            CashRegisterManager cashRegister = new CashRegisterManager();
 
-            warehouse.AddMovie("The Lord of the Rings", 30, "DVD", "3 hours");
-            warehouse.AddGame("The Lord of the Rings", 40, "PC");
-            warehouse.AddBook("The Hobbit", 20, "J.R.R. Tolkien", "Fantasy", "Paperback", "English");
-            warehouse.AddBook("The Hobbit2", 20, "J.R.R. Tolkien", "Fantasy", "Paperback", "English");
+            warehouse.AddBook("Bello Gallico et Civili", 449, "Julius Caesar", "Historia", "Inbunden", "Latin");
+            warehouse.AddBook("How to Read a Book", 149, "Mortimer J. Adler", "Kursliteratur", "Pocket");
+            warehouse.AddBook("Moby Dick", 49, "Herman Melville", "Äventyr", "Pocket");
+            warehouse.AddBook("Great Gatsby", 79, "F. Scott Fitzgerald", "Noir", "E-Bok");
+            warehouse.AddBook("House of Leaves", 49, "Mark Z. Danielewski", "Skräck");
+
+            warehouse.AddGame("Elden Ring", 599, "Playstation 5");
+            warehouse.AddGame("Demon's Souls", 499, "Playstation 5");
+            warehouse.AddGame("Microsoft Flight Simulator", 499, "PC");
+            warehouse.AddGame("Planescape Torment", 99, "PC");
+            warehouse.AddGame("Disco Elysium", 399, "PC");
+
+            warehouse.AddMovie("Nyckeln till frihet", 99, "DVD", 142);
+            warehouse.AddMovie("Gudfadern", 99, "DVD", 152);
+            warehouse.AddMovie("Konungens återkomst", 199, "Blu-Ray", 154);
+            warehouse.AddMovie("Pulp fiction", 199, "Blu-Ray");
+            warehouse.AddMovie("Schindlers list", 99, "DVD");
 
 
-            warehouse.removeBook("The Hobbit2");
+
+
+
+            //warehouse.AddBook("The Hobbit", 20, "J.R.R. Tolkien", "Fantasy", "Paperback", "English");
+            //warehouse.AddMovie("The Lord of the Rings", 30, "DVD", 120);
+            //warehouse.AddGame("The Lord of the Rings", 40, "PC");
+            //warehouse.AddBook("The Hobbit", 20, "J.R.R. Tolkien", "Fantasy", "Paperback", "English");
+            //warehouse.AddBook("The Hobbit2", 20, "J.R.R. Tolkien", "Fantasy", "Paperback", "English");
+
+            warehouse.setBookQuantity(1, 10);  
+            cashRegister.sellProduct(warehouse, 1, 3);
 
             Debug.WriteLine(warehouse);
         }

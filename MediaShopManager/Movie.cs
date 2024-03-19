@@ -6,23 +6,21 @@ using System.Threading.Tasks;
 
 namespace MediaShopManager
 {
-    internal class Movie : Media
+    /// class Movie is a class that is a child class of Media.
+    /// it contains the format and duration of the movie besides the properties of the media class.
+    public class Movie : Media
     {
         private string format { get; set; }
-        private string duration { get; set; }
+        private int? duration { get; set; }
 
-        public Movie(string name, int price, string format, string duration) : base(name, price)
+        /// constructor for the movie class.
+        public Movie(string name, int price, string format, int? duration) : base(name, price)
         {
             this.format = format;
             this.duration = duration;
         }
 
-        public string getMovieName()
-        {
-            return name;
-        }
-
-
+        /// overrides the toString method to return the movie details.
         public override string ToString()
         {
             return "Movie: " + productNumber + " " + name + " " + price + " " + quantity + " " + format + " " + duration;
