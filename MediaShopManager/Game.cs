@@ -12,10 +12,20 @@ namespace MediaShopManager
         private string platform { get; set; }
 
 
-        public Game(string name, int price, int quantity, string platform) : base(name, price, quantity)
+        public Game(string name, int price, string platform) : base(name, price)
         {
 
             this.platform = platform;
+        }
+
+        public string getGameName()
+        {
+            return name;
+        }
+
+        public override string ToString()
+        {
+            return "Game: " + productNumber + " " + name + " " + price + " " + quantity + " " + platform;
         }
     }
 }

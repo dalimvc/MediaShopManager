@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -25,6 +26,19 @@ namespace MediaShopManager
         public MainPage()
         {
             this.InitializeComponent();
+
+            WarehouseManager warehouse = new WarehouseManager();
+            warehouse.AddBook("The Hobbit", 20, "J.R.R. Tolkien", "Fantasy", "Paperback", "English");
+
+            warehouse.AddMovie("The Lord of the Rings", 30, "DVD", "3 hours");
+            warehouse.AddGame("The Lord of the Rings", 40, "PC");
+            warehouse.AddBook("The Hobbit", 20, "J.R.R. Tolkien", "Fantasy", "Paperback", "English");
+            warehouse.AddBook("The Hobbit2", 20, "J.R.R. Tolkien", "Fantasy", "Paperback", "English");
+
+
+            warehouse.removeBook("The Hobbit2");
+
+            Debug.WriteLine(warehouse);
         }
     }
 }
