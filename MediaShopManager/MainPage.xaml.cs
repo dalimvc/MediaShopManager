@@ -24,31 +24,24 @@ namespace MediaShopManager
     public sealed partial class MainPage : Page
     {
 
-        private void NavigateToWarehouseView()
+        private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
-            if (Frame != null)
+            NavigationViewItem item = args.SelectedItem as NavigationViewItem;
+            if (item != null)
             {
-                Frame.Navigate(typeof(WarehouseManagerPage));
+                switch (item.Tag)
+                {
+                    case "Home":
+                        Frame.Navigate(typeof(MainPage));
+                        break;
+                    case "Warehouse":
+                        Frame.Navigate(typeof(WarehouseManagerPage));
+                        break;
+                    case "Cashier":
+                        Frame.Navigate(typeof(CashierRegisterPage));
+                        break;
+                }
             }
-
-        }
-
-        private void NavigateToCashierView()
-        {
-            if (Frame != null)
-            {
-                Frame.Navigate(typeof(CashierRegisterPage));
-            }
-        }
-
-            private void ViewButtonCashierManager(object sender, RoutedEventArgs e)
-        {
-            NavigateToCashierView();
-        }
-
-        private void ViewButtonWarehouseManager(object sender, RoutedEventArgs e)
-        {
-            NavigateToWarehouseView();
         }
 
         public MainPage()

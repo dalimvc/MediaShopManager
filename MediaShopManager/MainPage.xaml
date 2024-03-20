@@ -8,16 +8,18 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="AliceBlue">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition  Height="1*"/>
-            <RowDefinition  Height="1*"/>
-        </Grid.RowDefinitions>
+    <Grid>
 
-        <TextBlock Text="Welcome to Media Store Manager" Grid.Row="0" FontSize="28" HorizontalAlignment="Center" Margin="0 150 0 0"/>
-        <TextBlock Text="Please select a property you wish to access!" Grid.Row="1" FontSize="24" HorizontalAlignment="Center"/>
-        <Button Content="Cashier Manager" Click="ViewButtonCashierManager" Margin="0,-550,180,0" Grid.Row="2" FontSize="17" HorizontalAlignment="Center" Background="#7395b2"/>
-        <Button Content="Warehouse Manager" Click="ViewButtonWarehouseManager" Margin="180,-550,0,0" Grid.Row="2" FontSize="17" HorizontalAlignment="Center" Background="#7395b2"/>
+<Frame x:Name="ContentFrame"/>
+        <NavigationView x:Name="NavView" PaneDisplayMode="LeftCompact" SelectionChanged="NavView_SelectionChanged" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" Canvas.ZIndex="1">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Home" Tag="Home" Icon="Home"/>
+                <NavigationViewItem Content="Warehouse" Tag="Warehouse" Icon="Admin"/>
+                <NavigationViewItem Content="Cashier" Tag="Cashier" Icon="Shop"/>
+            </NavigationView.MenuItems>
+            
+        </NavigationView>
+        <TextBlock Text="Welcome to Media Store Manager" Grid.Row="0" FontSize="28" HorizontalAlignment="Center" Margin="0 250 0 0"/>
+        <TextBlock Text="Please select a property you wish to access in navigation bar on the right!" Grid.Row="1" FontSize="24" HorizontalAlignment="Center" Margin="0 400 0 0"/>
     </Grid>
 </Page>

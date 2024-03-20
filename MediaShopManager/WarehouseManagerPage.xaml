@@ -9,7 +9,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-       
-        <Button Content="Switch to Cashier View" Click="View2Button_Click"/>
+        <NavigationView x:Name="NavView" PaneDisplayMode="LeftCompact" SelectionChanged="NavView_SelectionChanged" IsBackButtonVisible="Collapsed" IsSettingsVisible="False" Canvas.ZIndex="1">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Home" Tag="Home" Icon="Home"/>
+                <NavigationViewItem Content="Warehouse" Tag="Warehouse" Icon="Admin"/>
+                <NavigationViewItem Content="Cashier" Tag="Cashier" Icon="Shop"/>
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame"/>
+        </NavigationView>
+        <TextBlock x:Name="TitleTextBlock" Text="Warehouse" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
     </Grid>
 </Page>
