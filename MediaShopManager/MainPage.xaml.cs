@@ -24,25 +24,7 @@ namespace MediaShopManager
     public sealed partial class MainPage : Page
     {
 
-        private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
-        {
-            NavigationViewItem item = args.SelectedItem as NavigationViewItem;
-            if (item != null)
-            {
-                switch (item.Tag)
-                {
-                    case "Home":
-                        Frame.Navigate(typeof(MainPage));
-                        break;
-                    case "Warehouse":
-                        Frame.Navigate(typeof(WarehouseManagerPage));
-                        break;
-                    case "Cashier":
-                        Frame.Navigate(typeof(CashierRegisterPage));
-                        break;
-                }
-            }
-        }
+
 
         public MainPage()
         {
@@ -86,5 +68,30 @@ namespace MediaShopManager
 
             Debug.WriteLine(warehouse);
         }
+
+
+
+        private void NavViewSelected(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            NavigationViewItem item = args.SelectedItem as NavigationViewItem;
+
+            switch (item.Tag.ToString())
+            {
+                case "Home":
+                    ContentFrame.Navigate(typeof(MainPage));
+                    break;
+                case "Warehouse":
+                    HomepageGrid.Visibility = Visibility.Collapsed;
+                    ContentFrame.Navigate(typeof(WarehouseManagerPage));
+                    break;
+                case "Cashier":
+                    HomepageGrid.Visibility = Visibility.Collapsed;
+                    ContentFrame.Navigate(typeof(CashierRegisterPage));
+                    break;
+            }
+        }
+
+
+
     }
 }

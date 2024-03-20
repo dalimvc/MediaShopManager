@@ -27,29 +27,7 @@ namespace MediaShopManager
             this.InitializeComponent();
         }
 
-        //private void View1Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Frame.Navigate(typeof(WarehouseManagerPage));
-        //}
 
-        private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
-        {
-            NavigationViewItem item = args.SelectedItem as NavigationViewItem;
-            if (item != null)
-            {
-                switch (item.Tag)
-                {
-                    case "Home":
-                        Frame.Navigate(typeof(MainPage));
-                        break;
-                    case "Warehouse":
-                        Frame.Navigate(typeof(WarehouseManagerPage));
-                        break;
-                    case "Cashier":
-                        Frame.Navigate(typeof(CashierRegisterPage));
-                        break;
-                }
-            }
-        }
+
     }
 }

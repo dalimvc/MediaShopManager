@@ -10,16 +10,21 @@
 
     <Grid>
 
-<Frame x:Name="ContentFrame"/>
-        <NavigationView x:Name="NavView" PaneDisplayMode="LeftCompact" SelectionChanged="NavView_SelectionChanged" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" Canvas.ZIndex="1">
+        <NavigationView x:Name="navView" PaneDisplayMode="LeftCompact" IsPaneOpen="False" SelectionChanged="NavViewSelected" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" Canvas.ZIndex="1">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Home" Tag="Home" Icon="Home"/>
                 <NavigationViewItem Content="Warehouse" Tag="Warehouse" Icon="Admin"/>
                 <NavigationViewItem Content="Cashier" Tag="Cashier" Icon="Shop"/>
             </NavigationView.MenuItems>
-            
         </NavigationView>
-        <TextBlock Text="Welcome to Media Store Manager" Grid.Row="0" FontSize="28" HorizontalAlignment="Center" Margin="0 250 0 0"/>
-        <TextBlock Text="Please select a property you wish to access in navigation bar on the right!" Grid.Row="1" FontSize="24" HorizontalAlignment="Center" Margin="0 400 0 0"/>
+
+        <Grid>
+            <Frame x:Name="ContentFrame"/>
+            <Grid x:Name="HomepageGrid">
+                <TextBlock Text="Welcome to Media Store Manager" Grid.Row="0" FontSize="28" HorizontalAlignment="Center" Margin="0 250 0 0"/>
+                <TextBlock Text="Please select a property you wish to access in navigation bar on the right!" Grid.Row="1" FontSize="24" HorizontalAlignment="Center" Margin="0 400 0 0"/>   
+            </Grid>      
+        </Grid>
+
     </Grid>
 </Page>
